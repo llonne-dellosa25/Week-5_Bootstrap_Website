@@ -1,0 +1,166 @@
+/* Teal Background */
+body {
+    background-color: rgb(0, 124, 128);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 97%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #202021;
+    padding: 10px 50px;
+    box-shadow: 0px 4px 8px rgba(108, 35, 144, 0.7);
+    z-index: 1000;
+}
+
+.logo {
+    color: #62d6fd;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #62d6fd;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background: #008b8b;
+    color: white;
+    margin-top: 60px;
+}
+
+.hero img {
+    width: 300px;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.btn {
+    background: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Services Section */
+.services {
+    margin-top: 100px;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.services h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.services p {
+    font-size: 24px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.service-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 480px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.service-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}   
+
+.service-box h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.service-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service-box h3 {
+    margin: 10px 0;
+}
+
+.service-box p {
+    font-size: 14px;
+}
+
+.service-box .btn {
+    display: block;
+    margin-top: 10px;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.socials {
+    margin-bottom: 5px;
+}
+
+.socials a {
+    color: #008080;
+    text-decoration: none;
+}
+
+.socials a:hover {
+    text-decoration: underline;
+}

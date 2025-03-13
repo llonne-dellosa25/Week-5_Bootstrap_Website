@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Bootstrap Website</title>
+
+    <!-- Bootstrap CSS (Using CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+            <div class="d-flex w-100 justify-content-between align-items-center px-3">
+                <!-- Left-aligned Title -->
+                <a class="navbar-brand" href="#">My Bootstrap Web Page</a>
+        
+                <!-- Navbar Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <!-- Right-aligned Nav Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="Week 5 Bootstrap Website.htm">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="BINI.webp" class="d-block w-100" alt="BINI Group" style="height: 900px;">
+                <div class="carousel-caption">
+                    <h3>Welcome to My Mikhaiah Website</h3>
+                    <p>Your gateway to a modern web experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main> 
+        <!-- About Section -->
+        <div class="container mt-5" id="about">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h2>About Me</h2>
+                    <p>I specialize in crafting modern, responsive websites inspired by BINI, especially Mikhaiah, ensuring seamless performance across all devices.</p>
+                    <a href="about.html" class="btn btn-primary">Learn More</a>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="Whenn.jpg" class="img-fluid rounded shadow" alt="About Me">
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="container mt-5" id="services">
+            <h3 class="text-center">My Services</h3>
+            <div class="row">
+                <div class="col-md-4" data-aos="flip-left">
+                    <div class="card">
+                        <img src="mikhaiah4.jpg" class="card-img-top" alt="Web Development Service">
+                        <div class="card-body">
+                            <h5 class="card-title">Design & Multimedia Services.</h5>
+                            <a href="services.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-up">
+                    <div class="card">
+                        <img src="mikhaaiah3.jpg" class="card-img-top" alt="UI/UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Cybersecurity & IT Support.</h5>
+                            <a href="services.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-up">
+                    <div class="card">
+                        <img src="MA2.jpg" class="card-img-top" alt="UI/UX Design">
+                        <div class="card-body">
+                            <h5 class="card-title">Software, Web & Cloud Development.</h5>
+                            <a href="services.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="flip-right">
+                    <div class="card">
+                        <img src="MA1.jpg" class="card-img-top" alt="Legit Relationship Service">
+                        <div class="card-body">
+                            <h5 class="card-title">Digital Marketing & Automation.</h5>
+                            <a href="services.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5 text-center">
+        <p>&copy; 2025 MyBootstrapSite. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap & AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Highlight Active Page
+        document.addEventListener("DOMContentLoaded", function() {
+            let links = document.querySelectorAll(".nav-link");
+            let currentPage = window.location.pathname.split("/").pop();
+            if (currentPage === "") currentPage = "index.html"; // Default to Home
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

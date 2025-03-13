@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css"> <!-- Link to External CSS -->
+</head>
+<body>
+    <nav>
+        <div class="logo">BINI Whennn</div>
+        <ul class="nav-links">
+            <li><a href="Week 5 Bootstrap Website.htm">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Looking to collaborate or have a business inquiry? Contact us and let’s work together!</p>
+            <div class="contact-item">
+                <i>📍</i>
+                <div>
+                    <strong>Address</strong>
+                    <p>4671 Sugar Camp Road, Owatonna, Minnesota, 55060</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i>📞</i>
+                <div>
+                    <strong>Phone</strong>
+                    <p>507-475-60945-6094</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i>✉️</i>
+                <div>
+                    <strong>Email</strong>
+                    <p>Whennn@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <h2>Send Message</h2>
+            <form>
+                <input type="text" placeholder="Full Name" required style="background-color:  #05b0b0;">
+                <input type="email" placeholder="Email" required style="background-color:  #05b0b0;;">
+                <textarea placeholder="Type your message..." rows="4" required style="background-color: #05b0b0;"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                function revealContactSections() {
+                    let contactSections = document.querySelectorAll(".contact-info, .contact-form");
+                    let windowHeight = window.innerHeight;
+            
+                    contactSections.forEach(function (section) {
+                        let sectionTop = section.getBoundingClientRect().top;
+                        if (sectionTop < windowHeight - 50) {
+                            section.classList.add("show");
+                        }
+                    });
+                }
+            
+                window.addEventListener("scroll", revealContactSections);
+                revealContactSections(); // Ensure it runs on page load
+            });
+            </script>            
+    </div>
+</body>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="footer">
+        <div class="socials">
+            <strong>Follow Us: </strong> 
+            <a href="https://Facebook.com">Facebook</a>, 
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="copyright">
+            © 2024 MyWebsite. All Rights Reserved.
+        </div>
+  </footer>
+</html>

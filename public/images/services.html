@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="services.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">BINI Whennn</div>
+        <ul class="nav-links">
+            <li><a href="Week 5 Bootstrap Website.htm">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="services">
+        <h1>My Services</h1>
+        <p>Looking for expert services to elevate your brand, secure your systems, or enhance your online presence? Here’s what I offer:</p>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              function revealServices() {
+                  let serviceBoxes = document.querySelectorAll(".service-box");
+                  let windowHeight = window.innerHeight;
+          
+                  serviceBoxes.forEach(function (box) {
+                      let boxTop = box.getBoundingClientRect().top;
+                      if (boxTop < windowHeight - 50) {
+                          box.classList.add("show");
+                      }
+                  });
+              }
+          
+              window.addEventListener("scroll", revealServices);
+              revealServices(); // Run once on page load
+          });
+        </script>
+        <div class="service-container">
+            <div class="service-box" margin="10px">
+                <img src="mikhaiah4.jpg" alt="Web Development" style="height: 63%;">
+                <h3>🎨 Design & Multimedia Services</h3>
+                <p>Bring your ideas to life with stunning visuals and engaging media. </p>
+                <p>✔️ Website & UI/UX Design – wireframing, prototyping, and redesigns.</p> 
+                <p>✔️ Graphic Design – logos, branding, and marketing materials.</p>
+                <p>✔️ Multimedia Production – video editing, motion graphics, and animations.</p>
+                <p>✔️ Photography & Image Editing.</p> 
+                <p>✔️ 3D Modeling & Rendering.</p> 
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="service-box">
+                <img src="mikhaaiah3.jpg" alt="UI/UX Design" style="height: 58%;">
+                <h3>🔐 Cybersecurity & IT Support</h3>
+                <p>Keep your digital assets secure and running smoothly.</p>
+                <p>✔️ Network Security Auditing & Penetration Testing.</p>
+                <p>✔️ Firewall, VPN & Data Encryption Setup.</p>
+                <p>✔️ Ethical Hacking & Cyber Threat Assessment.</p>
+                <p>✔️ IT Support & Troubleshooting – hardware/software fixes, remote support.</p>
+                <p>✔️ Virus & Malware Removal.</p>
+                <p>✔️ Data Backup & Recovery</p>
+                <a href="#" class="btn";>Read More</a>
+            </div>
+            <div class="service-box">
+                <img src="MA2.jpg" alt="Legit Relationship">
+                <h3>💻 Software, Web & Cloud Development.</h3>
+                <p>Build powerful applications and scalable online solutions.</p>
+                <p>✔️ Website & Web App Development – static, dynamic, eCommerce, APIs.</p> 
+                <p>✔️ Mobile App Development – iOS & Android apps.</p>
+                <p>✔️ Custom Software Development tailored to your needs.</p>
+                <p>✔️ Cloud Computing & Hosting – AWS, Google Cloud, Azure.</p>
+                <p>✔️ Server & Database Management.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="service-box">
+              <img src="MA1.jpg" alt="Legit Relationship">
+              <h3>🚀 Digital Marketing & Automation.</h3>
+              <p>Grow your business with cutting-edge marketing and AI-driven solutions.</p>
+              <p>✔️ SEO Optimization & Google Ads Management.</p>
+              <p>✔️ Social Media Marketing & Content Creation.</p>
+              <p>✔️ Email Marketing & Automation.</p>
+              <p>✔️ Chatbot & AI Solutions – customer support bots, automation tools.</p>
+              <p>✔️ Business Process Automation.</p>
+              <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+    </section>
+</body>
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="footer">
+      <div class="socials">
+          <strong>Follow Us: </strong> 
+          <a href="https://Facebook.com">Facebook</a>, 
+          <a href="#">Twitter</a>
+          <a href="">Instagram</a>
+      </div>
+      <div class="copyright">
+          © 2024 MyWebsite. All Rights Reserved.
+      </div>
+</footer>
+</html>
