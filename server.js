@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
+console.log("MONGO_URI from .env:", process.env.MONGO_URI);
 const path = require("path");
 const cors = require("cors");
 
@@ -22,11 +23,8 @@ app.use((req, res, next) => {
 });
 
 // ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => console.log("✅ Connected to MongoDB"))
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 // ✅ User Routes
