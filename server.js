@@ -77,7 +77,12 @@ app.post("/contact", async (req, res) => {
 
 // ✅ Serve HTML File
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "public", "index.html"), (err) => {
+    if (err) {
+      console.error("Error serving index.html:", err);
+      res.status(500).send("Error loading page");
+    }
+  });
 });
 
 // ✅ Start the Server (Only One!)
