@@ -4,10 +4,7 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 5 Bootstrap Website</title>
-
-    <!-- Bootstrap CSS (Using CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
@@ -17,15 +14,12 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
             <div class="d-flex w-100 justify-content-between align-items-center px-3">
-                <!-- Left-aligned Title -->
                 <a class="navbar-brand" href="#">My Bootstrap Web Page</a>
         
-                <!-- Navbar Toggle Button for Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
         
-                <!-- Right-aligned Nav Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="Week 5 Bootstrap Website.htm">Home</a></li>
@@ -53,7 +47,6 @@
     </div>
 
     <main> 
-        <!-- About Section -->
         <div class="container mt-5" id="about">
             <div class="row d-flex align-items-center">
                 <div class="col-md-6" data-aos="fade-right">
@@ -67,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Services Section -->
         <div class="container mt-5" id="services">
             <h3 class="text-center">My Services</h3>
             <div class="row">
@@ -111,7 +103,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-5 text-center">
         <p>&copy; 2025 MyBootstrapSite. All Rights Reserved.</p>
     </footer>
@@ -121,12 +112,10 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
-
-        // Highlight Active Page
         document.addEventListener("DOMContentLoaded", function() {
             let links = document.querySelectorAll(".nav-link");
             let currentPage = window.location.pathname.split("/").pop();
-            if (currentPage === "") currentPage = "index.html"; // Default to Home
+            if (currentPage === "") currentPage = "index.html";
 
             links.forEach(link => {
                 if (link.getAttribute("href") === currentPage) {

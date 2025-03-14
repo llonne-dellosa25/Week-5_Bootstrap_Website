@@ -1,4 +1,3 @@
-    /* Bring back the teal background */
     body {
         background-color:rgb(0,124,128);
         margin: 0;
@@ -6,7 +5,6 @@
         font-family: Arial, sans-serif;
     }
 
-    /* Navbar */
     nav {
         position: fixed;
         width: 96%;
@@ -21,14 +19,12 @@
         z-index: 1000;
     }
 
-    /* Logo */
     .logo {
         color: #62d6fd;
         font-size: 24px;
         font-weight: bold;
     }
 
-    /* Navbar Links */
     .nav-links {
         list-style: none;
         display: flex;
@@ -55,7 +51,6 @@
         text-decoration: underline;
     }
 
-    /* Hover Underline */
     .nav-links a:hover::after {
         content: "";
         position: absolute;
@@ -66,9 +61,8 @@
         background-color: #1e90ff;
     }
 
-    /* Prevent content from being under navbar */
     .container {
-        margin-top: 100px; /* Push content down */
+        margin-top: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -76,16 +70,15 @@
         gap: 40px;
     }
 
-    /* Contact Info & Form */
     .contact-info {
         background-image: url('BINI.JPG');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        padding: 50px; /* Adjust as needed */
+        padding: 50px; 
         border-radius: 10px;
-        color: rgb(12, 12, 12); /* Make text readable */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Adds contrast */
+        color: rgb(12, 12, 12); 
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
         width: 30%;
         font-style: italic;
         font-size: medium;
@@ -95,7 +88,7 @@
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        display: block; /* Ensure elements are visible */
+        display: block; 
     }
     
     .show {
@@ -114,14 +107,14 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        padding: 50px; /* Adjust as needed */
+        padding: 50px; 
         border-radius: 10px;
-        color: rgb(12, 12, 12); /* Make text readable */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Adds contrast */
+        color: rgb(12, 12, 12); 
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); 
         width: 30%;
 
     }
-    /* Form Inputs */
+    
     .contact-form input, .contact-form textarea {
         width: 96%;
         padding: 20px;
@@ -130,7 +123,6 @@
         border: 1px solid #010101;
     }
 
-    /* Submit Button */
     .contact-form button {
         background-color: #05b0b0;
         color: rgb(105, 209, 250);
