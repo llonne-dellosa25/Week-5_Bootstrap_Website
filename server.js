@@ -1,43 +1,31 @@
-const express = require("express");
-const mongoose = require("mongoose");
-require("dotenv").config();
-const path = require("path");
-const cors = require("cors");
-
+const express = require('express');
+const path = require('path');
 const app = express();
-app.use(cors());
+const port = process.env.PORT || 3000;
 
-// ✅ Import Models (Corrected path)
-const User = require("./models/User"); // Correct path to User model
-const Contact = require("./models/Contact"); // Correct path to Contact model
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// ✅ Middleware
-app.use(express.json());
-app.use(express.static(path.join(__dirname, "../public"))); // Serve static files from the public folder
-
-// ✅ Log Requests
-app.use((req, res, next) => {
-  console.log(`Received request: ${req.method} ${req.url}`);
-  next();
+// Route to serve the home page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ Connected to MongoDB Atlas"))
-  .catch(err => console.error("❌ MongoDB Connection Error:", err));
-
-// ✅ Serve the HTML File
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../public", "index.html"), (err) => {
-    if (err) {
-      console.error("Error serving index.html:", err);
-      res.status(500).send("Error loading page");
-    }
-  });
+// Route to serve the about page
+app.get('/about', (req, res) => {
+  res.sendFile(path.join(__dirname, 'about.html'));
 });
 
-// ✅ Start the Server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`);
+// Route to serve the services page
+app.get('/services', (req, res) => {
+  res.sendFile(path.join(__dirname, 'services.html'));
+});
+
+// Route to serve the contact page
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+app.listen(port, () => {
+  console.log(`🚀 Server is running on http://localhost:${port}`);
 });
