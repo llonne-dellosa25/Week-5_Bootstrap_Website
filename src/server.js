@@ -7,13 +7,13 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-// ✅ Import Models
-const User = require("./models/User");
-const Contact = require("./models/Contact");
+// ✅ Import Models (Corrected path)
+const User = require("./models/User"); // Correct path to User model
+const Contact = require("./models/Contact"); // Correct path to Contact model
 
 // ✅ Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public"))); // Correct static files directory
+app.use(express.static(path.join(__dirname, "../public"))); // Serve static files from the public folder
 
 // ✅ Log Requests
 app.use((req, res, next) => {
@@ -26,9 +26,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
-// ✅ Serve the HTML File (FIXED)
+// ✅ Serve the HTML File
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "index.html"), (err) => {
+  res.sendFile(path.resolve(__dirname, "../public", "index.html"), (err) => {
     if (err) {
       console.error("Error serving index.html:", err);
       res.status(500).send("Error loading page");
