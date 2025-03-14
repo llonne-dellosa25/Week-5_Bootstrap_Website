@@ -1,43 +1,49 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
-const User = require("./models/User");
 const path = require("path");
+const cors = require("cors");
 
+
+
+const app = express();
+app.use(cors());
+// ✅ Import Models
+const User = require("./models/User");
+const Contact = require("./models/Contact");
+
+// ✅ Middleware
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
 
-// ✅ Middleware to log requests (Moved Up)
+// ✅ Middleware to log requests
 app.use((req, res, next) => {
   console.log(`Received request: ${req.method} ${req.url}`);
   next();
 });
 
 // ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
-
-// Create a new user
+// ✅ User Routes
 app.post("/users", async (req, res) => {
   try {
     const user = new User(req.body);
     await user.save();
-    res.status(201).json(user);  
+    res.status(201).json(user);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 });
 
-// Read all users
-app.get('/users', async (req, res) => {
+app.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
 });
 
-// Update a user
-app.put('/users/:id', async (req, res) => {
+app.put("/users/:id", async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!user) return res.status(404).json({ message: "User not found" });
@@ -47,8 +53,7 @@ app.put('/users/:id', async (req, res) => {
   }
 });
 
-// Delete a user ✅ (Removed Duplicate)
-app.delete('/users/:id', async (req, res) => {
+app.delete("/users/:id", async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
     if (!user) return res.status(404).json({ message: "User not found" });
@@ -58,14 +63,25 @@ app.delete('/users/:id', async (req, res) => {
   }
 });
 
-// ✅ Static Files & Routes
-app.use(express.static(path.join(__dirname, "public")));
+// ✅ Contact Form Route
+app.post("/contact", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    const contact = new Contact({ name, email, message });
+    await contact.save();
+    res.status(201).json({ success: true, message: "Message sent successfully!" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Server error", error: error.message });
+  }
+});
 
+// ✅ Serve HTML File
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// ✅ Start the Server
-app.listen(3000, () => {
-  console.log(`🚀 Server is running on http://localhost:3000`);
+// ✅ Start the Server (Only One!)
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });

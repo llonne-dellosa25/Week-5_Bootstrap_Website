@@ -44,16 +44,53 @@
             </div>
         </div>
 
-        <!-- Contact Form Section -->
-        <div class="contact-form">
-            <h2>Send Message</h2>
-            <form>
-                <input type="text" placeholder="Full Name" required style="background-color:  #05b0b0;">
-                <input type="email" placeholder="Email" required style="background-color:  #05b0b0;;">
-                <textarea placeholder="Type your message..." rows="4" required style="background-color: #05b0b0;"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+<!-- Contact Form Section -->
+<div class="contact-form">
+    <h2>Send Message</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required style="background-color:  #05b0b0;">
+        <input type="email" id="email" placeholder="Email" required style="background-color:  #05b0b0;">
+        <textarea id="message" placeholder="Type your message..." rows="4" required style="background-color: #05b0b0;"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent page refresh
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        const formData = { name, email, message };
+
+        try {
+            const response = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+            
+            if (data.success) {
+                alert("Message sent successfully!");
+                document.getElementById("contactForm").reset(); // Clear form fields
+            } else {
+                alert("Error: " + data.message);
+            }
+        } catch (error) {
+            alert("Something went wrong. Please try again.");
+            console.error("Error:", error);
+        }
+    });
+});
+</script>
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 function revealContactSections() {
