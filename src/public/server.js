@@ -9,8 +9,8 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 // ✅ Import Models
-const User = require("./models/User");
-const Contact = require("./models/Contact");
+const User = require("../../models/User");
+const Contact = require("../../models/Contact");
 
 // ✅ Middleware
 app.use(express.json());
