@@ -19,21 +19,17 @@ mongoose.connect(process.env.MONGODB_URI)
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes to serve pages
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
+// Routes to serve pages (no need for '/' route)
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, 'about.html'));
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
 app.get('/services', (req, res) => {
-  res.sendFile(path.join(__dirname, 'services.html'));
+  res.sendFile(path.join(__dirname, 'public', 'services.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, 'contact.html'));
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
 app.listen(port, () => {
