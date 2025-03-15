@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="/css/about.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    h1 {
+      font-size: 2rem; /* Added default font-size */
+      margin: 10px 0; /* Added margin */
+    }
+  </style>
 </head>
 <body>
   <section class="main-section">
     <nav>
       <h1 data-aos="zoom-in" data-aos-duration="1000"><span style="color: #4acfee;">When</span>nn09</h1>
       <ul>
-        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="/">Home </a></li>
+        <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="/">Home</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a class="active" href="/about.html">About</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="/services.html">Services</a></li>
         <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="/contact.html">Contact</a></li>
@@ -24,14 +30,16 @@
       <div class="when-info">
         <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">Hi, I'm Whennn</h1>
         <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">BSIT 2-B</h1>
-        <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">I'm a  Developer</h2>
-        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">I'm a lowkey fan of POP girl group BINI. I'm also married to Aiah Arceta for a couple of months now. I like writing her poems, singing her favorite songs, eating ice cream whenever she wants, exloring different kinds of adventures, and visiting a lot of countries all over the world. </p>
+        <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">I'm a Developer</h2>
+        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">
+          I'm a lowkey fan of POP girl group BINI. I'm also married to Aiah Arceta for a couple of months now. I like writing her poems, singing her favorite songs, eating ice cream whenever she wants, exploring different kinds of adventures, and visiting a lot of countries all over the world.
+        </p>
         <div class="Buttons">
           <button class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1100">Hire me</button> 
           <ul class="ul-icons">
             <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200"><i class='bx bxl-github'></i></a></li>
             <li><a href="https://Twitter.com" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400" ><i class='bx bxl-youtube'></i></a></li>
+            <li><a href="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400"><i class='bx bxl-youtube'></i></a></li>
             <li><a href="https://Facebook.com" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500"><i class='bx bxl-facebook-circle'></i></a></li>
           </ul>
         </div>
@@ -61,9 +69,13 @@
       </div>
     </div>
   </section>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- ✅ Fixed AOS script issue -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+    });
   </script>
 </body>
-</html> 
+</html>
